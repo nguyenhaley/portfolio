@@ -1,34 +1,40 @@
 :root {
-    --background: #000000;
-    --mainText: #D1D1D1;
-    --border: rgba(255, 255, 255, 0.1);
+    --background: #0a0a0a;
+    --mainText: #e8e8e8;
+    --text-dim: #a0a0a0;
+    --border: white;
     --accent: white;
 }
-
 * {
     background-color: var(--background);
     color: var(--mainText);
 }
-
-
 body {
     font-family: "Archivo", sans-serif;
+    margin: 0;
+    padding: 0;
 }
-
-h1, h2, h3 {
+h1 {
     font-family: "Syne", sans-serif;
 }
 
+/* navigation */
+#welcome,
+#about-me,
+#projects,
+#contact-me {
+    scroll-margin-top: 10vh;
+}
 .navbar {
     height: 10vh;
 }
-
 .navbar-nav {
-    font-size: 1.5rem;
-    font-weight: 200;
+    font-size: 0.9rem;
+    font-weight: 400;
     margin-right: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
-
 .collapse {
     width: 100%;
     height: 100%;
@@ -37,106 +43,293 @@ h1, h2, h3 {
     padding: 0;
 }
 
-/* styling for first page */
-#welcome .fp-overflow{
+/* welcome section */
+#welcome {
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    padding-left: 2vw;
-    padding-right: 2vw;
-}
-.hero-label {
-    font-size: 1rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    display: inline-block;
-    padding: 0.5rem 1.5rem;
-    border: 1px solid var(--border);  /* This creates the box! */
-}
-#skills-header, #skills-text {
-    display: flex;
-    margin-top: 5rem;
-    justify-content: space-around;
-
-}
-#skills-text {
-    margin-top: 0;
     align-items: center;
-    justify-content: space-around;
-    text-align: center;
+    padding: 0 3rem;
 }
-h1 {
-    font-size: 6rem !important;
-    font-weight: 800 !important;              
-    line-height: 0.95 !important;                
-    margin-bottom: 2rem;
-    letter-spacing: -3px;            
-}
-#text-intro p {
-    font-size: 1.5rem;
-    font-weight: 200;
-    width: 75%;
-    margin-top: 2rem;
-}
-.btn {
-    padding: 1rem 2.5rem !important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-}
-h3 {
-    font-weight: 200 !important;
-    font-size: 1.25rem !important;
-}
-#headshot {
-    border-radius: 15px;
-}
-
-
-/* styling for about me page */
-#main {
-    display: flex;
-    gap: 4rem;
-    width: 80%;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
+#text-intro {
+    max-width: 1200px;
+    width: 100%;
     padding-top: 5rem;
 }
-#about-me.fp-table {
-  justify-content: flex-start;
-  align-items: flex-start;
+.hero-label {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    border: 1px solid var(--border);
 }
-#about-me .fp-overflow {
-  padding: 5rem 2vw;
+#welcome h1 {
+    font-size: clamp(4rem, 10vw, 8rem) !important;
+    font-weight: 800 !important;
+    line-height: 0.9 !important;
+    margin-bottom: 1rem !important;
+    letter-spacing: -3px !important;
 }
-#aboutContent {
-    font-size: 1.25rem;
-    font-weight: 200;
+h1 span {
+    display: block;
+}
+#text-intro p {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--text-dim);
+    max-width: 700px;
+    line-height: 1.6;
+    margin-bottom: 3rem;
 }
 
-/* projects page styling */
-#projects {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
+/* download button */
+.btn.btn-dark {
+    padding: 1.1rem 2.8rem !important;
+    border: 1px solid var(--accent) !important;
+    background: transparent !important;
+    color: var(--accent) !important;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
-#projects .projects-header {
-  position: absolute !important;
-  top: 0;
-  left: 0;
-  padding-top: 5rem;
-  padding-left: 2vw;
-  padding-right: 2vw;
+
+.btn.btn-dark:hover {
+    color: var(--text-dim) !important;
 }
-#project-cards {
+
+/* skills section */
+#skills {
+    padding: 3rem 3rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+#skills-header h3 {
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: medium;
+    margin-bottom: 0.5rem;
+    padding-top: 1.5rem;
+    font-family: 'Syne', sans-serif;
+    letter-spacing: 2px;
+}
+#skills-header p {
+    padding-bottom: 0.5rem;
+}
+
+/* styling for about me page */
+#about-me {
+    padding: 3rem 3rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+#main {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    margin: 0 auto;
     gap: 4rem;
 }
-#project-cards .card {
-    border-width: 0.2rem;
+.coursework {
+    margin-top: 0.8rem;
+    font-size: 0.85rem !important;
+    color: var(--text-dim) !important;
+}
+#about-me h1 {
+    margin-bottom: 2rem;
+    font-size: clamp(2rem, 4vw, 3rem) !important;
+    font-weight: 700 !important;
+    line-height: 0.9 !important;
+    letter-spacing: -2px !important;
+}
+#aboutContent {
+    color: var(--text-dim);
+    line-height: 2;
+    width: 65vw;
+}
+#about-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding-top: 3rem;
+}
+.detail-box {
+    padding: 1.5rem;
+    border-left: 2px solid var(--mainText);
+    border-radius: 4px;
+}
+.detail-box h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+.detail-box p {
+    font-size: 0.95rem;
+    color: var(--mainText);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* styling for projects page */
+#projects {
+    padding: 3rem 3rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+#projects h1 {
+    margin-bottom: 2rem;
+    font-size: clamp(2rem, 4vw, 3rem) !important;
+    font-weight: 700 !important;
+    line-height: 0.9 !important;
+    letter-spacing: -2px !important;
+}
+.project-tags {
+    display: flex;
+    gap: 0.6rem;
+    margin: 0.8rem 0 1.2rem;
+    flex-wrap: wrap;
+}
+.tag {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.8rem;
+    border-radius: 2px;
+}
+.project-item {
+    display: flex;
+    gap: 2.5rem;
+    padding: 3rem 0;
+    border-top: 1px solid var(--border);
+}
+.project-item:last-child {
+    border-bottom: 1px solid var(--border);
+}
+.project-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    color: var(--text-dim);
+    min-width: 2.5rem;
+    padding-top: 0.3rem; /* aligns number with title baseline instead of floating above it */
+}
+.project-info h3 {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+}
+.project-description {
+    max-width: 720px;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+
+/* styling for contact page */
+#contact-me {
+    padding: 5rem 3rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+.contact-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+}
+#contact-me h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem) !important;
+    font-weight: 700 !important;
+    letter-spacing: -2px !important;
+    margin: 1.5rem 0 1rem !important;
+}
+.contact-intro {
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.contact-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.8rem;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+.contact-card:hover {
+    opacity: 0.6;
+}
+.contact-label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    color: var(--text-dim);
+}
+.contact-value {
+    color: var(--mainText);
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+}
+
+/* responsive design */
+
+/* Adjust layout for ipads */
+@media (max-width: 768px) {
+    #main {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    #aboutContent {
+        width: 100%;
+    } 
+}
+
+/* Adjust layout for mobile devices */
+@media (max-width: 480px) {
+    #skills, #about-me, #projects, #contact-me, #welcome {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    #welcome {
+        align-items: stretch;
+        padding: 8vh 1.5rem;
+    }
+    #text-intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 84vh;
+        padding-top: 0;
+    }
+    #welcome h1 {
+        font-size: clamp(4rem, 18vw, 8rem) !important;
+        margin: 0 !important;
+    }
+    .hero-label {
+        margin-bottom: 0;
+    }
+    #text-intro p {
+        font-size: 1.3rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+    #about-details {
+        grid-template-columns: 1fr;
+    }
+    .project-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }
